@@ -61,7 +61,10 @@ public class ShopifySheetPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
         }
 
         DispatchQueue.main.async {
-            guard let rootViewController = UIApplication.shared.windows.first?.rootViewController else {
+            guard let rootViewController = UIApplication.shared.connectedScenes
+                .compactMap({ $0 as? UIWindowScene })
+                .first?.windows.first(where: { $0.isKeyWindow })?
+                .rootViewController else {
                 result(FlutterError(code: "INVALID_CONTEXT", message: "No valid root view controller", details: nil))
                 return
             }
