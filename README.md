@@ -16,7 +16,7 @@ Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  shopify_sheet: ^0.0.5
+  shopify_sheet: ^0.1.1
 ```
 
 Run the following command to get the package:
@@ -104,7 +104,18 @@ android {
 
 ---
 ### **3. iOS Configuration**
-make sure the project dependency is greater than or equal to `13.0`
+
+#### **3.1 Minimum Deployment Target**
+Set the iOS deployment target to at least `13.0` in your Xcode project settings or `ios/Podfile`:
+
+```ruby
+platform :ios, '13.0'
+```
+
+#### **3.2 UIScene Lifecycle**
+This plugin supports the UIScene lifecycle (required by Apple starting iOS 27). If your app uses `UISceneDelegate`, no additional configuration is needed - the plugin resolves the presenting view controller via `connectedScenes`.
+
+For Flutter apps migrated to UIScene lifecycle, ensure your `AppDelegate.swift` registers plugins through the implicit engine delegate. See the [example app](example/ios/Runner/AppDelegate.swift) for reference.
 ### **4. Usage**
 
 #### **4.1 Launch Shopify Checkout**

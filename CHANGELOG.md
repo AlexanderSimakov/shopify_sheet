@@ -22,6 +22,10 @@
 ## 0.0.8 
 * Add checkout kit color scheme support
 
+## 0.1.1
+* Fix iOS UIScene lifecycle compatibility for checkout presentation
+* Migrate example app to UIScene lifecycle
+
 ## 0.1.0
-* Add dart serialized `ShopifySheetCompletedEvent` 
+* Add dart serialized `ShopifySheetCompletedEvent`
 * Add android completed event serialization
