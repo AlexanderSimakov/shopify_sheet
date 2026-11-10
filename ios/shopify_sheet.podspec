@@ -13,7 +13,7 @@ A new Flutter project.
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Your Company' => 'farooqafridi958@gmail.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
+  s.source_files = 'shopify_sheet/Sources/shopify_sheet/**/*.swift'
   s.dependency 'Flutter'
   s.platform = :ios, '13.0'
 
